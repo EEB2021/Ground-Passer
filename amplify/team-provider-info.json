@@ -1,15 +1,41 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-groundpasser-dev-175721-authRole",
-      "UnauthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-dev-175721-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-dev-175721-authRole",
+      "AuthRoleName": "amplify-groundpasser-dev-90059-authRole",
+      "UnauthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-dev-90059-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-dev-90059-authRole",
       "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-groundpasser-dev-175721-deployment",
-      "UnauthRoleName": "amplify-groundpasser-dev-175721-unauthRole",
-      "StackName": "amplify-groundpasser-dev-175721",
-      "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-dev-175721/e7f1e670-b8ba-11eb-8c05-0a68dd1c0600",
-      "AmplifyAppId": "d39myct6qt1zi"
+      "DeploymentBucketName": "amplify-groundpasser-dev-90059-deployment",
+      "UnauthRoleName": "amplify-groundpasser-dev-90059-unauthRole",
+      "StackName": "amplify-groundpasser-dev-90059",
+      "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-dev-90059/4e3243b0-ba02-11eb-8631-02e20d7bd04e",
+      "AmplifyAppId": "d2qh565w8zl04q"
+    }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-groundpasser-test-90420-authRole",
+      "UnauthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-test-90420-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-test-90420-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-groundpasser-test-90420-deployment",
+      "UnauthRoleName": "amplify-groundpasser-test-90420-unauthRole",
+      "StackName": "amplify-groundpasser-test-90420",
+      "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-test-90420/c44047a0-ba02-11eb-9d61-060bfe7e8842",
+      "AmplifyAppId": "d2qh565w8zl04q"
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-groundpasser-prod-90619-authRole",
+      "UnauthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-prod-90619-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-prod-90619-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-groundpasser-prod-90619-deployment",
+      "UnauthRoleName": "amplify-groundpasser-prod-90619-unauthRole",
+      "StackName": "amplify-groundpasser-prod-90619",
+      "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-prod-90619/0b56d3c0-ba03-11eb-802a-0661b7e64d30",
+      "AmplifyAppId": "d2qh565w8zl04q"
     }
   }
 }
