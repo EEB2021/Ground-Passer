@@ -1,0 +1,5 @@
+type Mitglieder @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Name: String
+  Alter: Int
+}
