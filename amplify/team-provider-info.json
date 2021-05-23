@@ -1,4 +1,23 @@
 {
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-groundpasser-test-90420-authRole",
+      "UnauthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-test-90420-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-test-90420-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-groundpasser-test-90420-deployment",
+      "UnauthRoleName": "amplify-groundpasser-test-90420-unauthRole",
+      "StackName": "amplify-groundpasser-test-90420",
+      "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-test-90420/c44047a0-ba02-11eb-9d61-060bfe7e8842",
+      "AmplifyAppId": "d2qh565w8zl04q",
+      "AuthTriggerTemplateURL": ""
+    },
+    "categories": {
+      "auth": {
+        "GroundPasser": {}
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-groundpasser-dev-90059-authRole",
@@ -15,19 +34,6 @@
       "auth": {
         "groundpasser758ac4d0": {}
       }
-    }
-  },
-  "test": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-groundpasser-test-90420-authRole",
-      "UnauthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-test-90420-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::923152159925:role/amplify-groundpasser-test-90420-authRole",
-      "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-groundpasser-test-90420-deployment",
-      "UnauthRoleName": "amplify-groundpasser-test-90420-unauthRole",
-      "StackName": "amplify-groundpasser-test-90420",
-      "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-test-90420/c44047a0-ba02-11eb-9d61-060bfe7e8842",
-      "AmplifyAppId": "d2qh565w8zl04q"
     }
   },
   "prod": {

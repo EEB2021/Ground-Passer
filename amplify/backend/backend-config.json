@@ -1,6 +1,6 @@
 {
   "api": {
-    "groundpasser": {
+    "GroundPasser": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -22,7 +22,7 @@
     }
   },
   "auth": {
-    "groundpasser758ac4d0": {
+    "GroundPasser": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
