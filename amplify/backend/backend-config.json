@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "groundpasser73a653ff": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
