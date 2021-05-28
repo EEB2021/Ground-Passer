@@ -1,0 +1,8 @@
+type Scoredb @model {
+  id: ID!
+  name: String!
+  zeit: String
+  anztreffer: Int
+  anzfehler: Int
+  punkte: Int
+}
