@@ -7,7 +7,8 @@ import {AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import {listScoredbs} from "./graphql/queries";
 import{useState} from "react";
 import{useEffect} from "react";
-/*import {Paper} from '@material-ui/core';*/
+import { DataGrid } from '@material-ui/data-grid';
+import {Paper} from '@material-ui/core';
 
 Amplify.configure(awsconfig);
 
@@ -29,6 +30,7 @@ function App() {
         }
     }
 
+
   return (
       <div className="App">
         <header className="App-header">
@@ -37,18 +39,16 @@ function App() {
         </header>
           <div className="scoreList">
               {scores.map(scores =>{
-                  return(
+                  return <Paper variant ="outlined" elevation={2}>
                         <div className="scoreCard">
-
                             <div>
                                 <div className="name"> {scores.name} Zeit: {scores.zeit} Anzahl Treffer: {scores.anztreffer} Anzahl Fehler: {scores.anzfehler} Anzahl Punkte: {scores.punkte}</div>
-
-
                             </div>
                         </div>
-                  )
+                  </Paper>
               })}
           </div>
+
       </div>
   );
 }
