@@ -1,4 +1,4 @@
-type Scoredb @model {
+type Scoredb @model @auth(rules: [{allow: private}]) {
   id: ID!
   name: String!
   zeit: String
@@ -6,3 +6,4 @@ type Scoredb @model {
   anzfehler: Int
   punkte: Int
 }
+ 
