@@ -10,6 +10,11 @@
       "StackName": "amplify-groundpasser-dev-90059",
       "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-dev-90059/4e3243b0-ba02-11eb-8631-02e20d7bd04e",
       "AmplifyAppId": "d2qh565w8zl04q"
+    },
+    "categories": {
+      "auth": {
+        "groundpasser73a653ff": {}
+      }
     }
   },
   "test": {
@@ -23,6 +28,11 @@
       "StackName": "amplify-groundpasser-test-90420",
       "StackId": "arn:aws:cloudformation:eu-central-1:923152159925:stack/amplify-groundpasser-test-90420/c44047a0-ba02-11eb-9d61-060bfe7e8842",
       "AmplifyAppId": "d2qh565w8zl04q"
+    },
+    "categories": {
+      "auth": {
+        "groundpasser73a653ff": {}
+      }
     }
   },
   "prod": {
