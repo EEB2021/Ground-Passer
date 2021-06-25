@@ -24,24 +24,29 @@
 }
 
 .scoreList{
-  text-align: right;
+  text-align: left;
   display: flex;
   flex-direction: column;
 }
 
 .scoreCard{
-  text-align: right;
-  display:flex;
-  justify-content: space-around;
-  padding: 10px;
-
-}
-
-.scoreCard2{
-  height: '400' ;
-  width: '100%';
-}
-.name{
   text-align: center;
   display:flex;
+  justify-content: space-between;
+  padding: 10px;
+
+ }
+
+ .scoreCard2{
+   height: '400' ;
+   width: '100%';
+ }
+ .name{
+   text-align: center;
+   display:flex;
+}
+.spaltenName{
+  text-align: center;
+  display:flex;
+  font-weight: bold;
 }

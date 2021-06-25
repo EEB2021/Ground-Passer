@@ -59,6 +59,17 @@ function App() {
                 <h2>Ground Passer </h2>
             </header>
             <div className="scoreList">
+                <Paper variant ="outlined" elevation={2}>
+                <div className="scoreCard">
+                    <div>
+                        <div className="spaltenName"> Name </div>
+                    </div>
+                    <div>
+                        <div className="spaltenName"> Zeit </div>
+                    </div>
+                </div>
+            </Paper>
+
                 {scores.map(scores =>{
                     return <Paper variant ="outlined" elevation={2}>
                         <div className="scoreCard">
