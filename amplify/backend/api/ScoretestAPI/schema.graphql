@@ -1,0 +1,6 @@
+type Scoredb @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String!
+  zeit: String!
+}
+ 
