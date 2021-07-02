@@ -2,6 +2,7 @@
 import './App.css';
 import React from 'react'
 import awsconfig from './aws-exports'
+import  logo from './logo1.jpeg'
 import Amplify, {API, graphqlOperation} from 'aws-amplify'
 import {AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import {listScoredbs} from "./graphql/queries";
@@ -39,6 +40,7 @@ function App() {
             const scoreList =scoreData.data.listScoredbs.items;
             console.log('Score list', scoreList);
             setScores(scoreList);
+            console.log(logo);
         }catch(error){
             console.log('error on fetching scores', error);
         }
@@ -51,12 +53,12 @@ function App() {
     ]
 
 
-
     return (
         <div className="App">
             <header className="App-header">
                 <AmplifySignOut/>
-                <h2>Ground Passer </h2>
+                < img src={logo} alt=""/>
+
             </header>
             <div className="scoreList">
                 <Paper variant ="outlined" elevation={2}>
@@ -116,6 +118,10 @@ function App() {
         </div>
     );
 }
+
+
+
+
 
 
 export default withAuthenticator(App)
