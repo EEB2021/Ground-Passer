@@ -1,14 +1,6 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 10vmin;
-  pointer-events: none;
-}
-
-
-
 .App-header {
   background-color: #282c34;
   min-height: 5vh;
@@ -18,34 +10,22 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
 .scoreList{
   text-align: left;
   display: flex;
   flex-direction: column;
 }
-
 .scoreCard{
   text-align: center;
   display:flex;
   justify-content: space-between;
   padding: 10px;
-
  }
-
- .scoreCard2{
-   height: '400' ;
-   width: '100%';
- }
- .name{
+ .values{
    text-align: center;
    display:flex;
 }
-.spaltenName{
+.columnName{
   text-align: center;
   display:flex;
   font-weight: bold;
