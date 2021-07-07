@@ -1,4 +1,4 @@
-# importing libraries
+#importing libraries
 import RPi.GPIO as GPIO
 import time
 import random
