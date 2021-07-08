@@ -1,10 +1,10 @@
-# importing libraries
+#importing libraries
 import RPi.GPIO as GPIO
 import time
 import random
 from gpiozero import Button, Buzzer, LED, DigitalInputDevice
 from gpiozero.pins.pigpio import PiGPIOFactory
-# imports and definitions for AWS connection
+#imports and definitions for AWS connection
 import paho.mqtt.client as paho
 import os
 import socket
@@ -22,29 +22,29 @@ factory172 = PiGPIOFactory(host='192.168.153.172')
 vibr = DigitalInputDevice (9)
 button = Button (2)
 bz = Buzzer(16)
-ledGruen = LED (17)
-ledRot= LED (18)
-ledGelb = LED (19)
+ledGreen = LED (17)
+ledRed= LED (18)
+ledYellow = LED (19)
 ledOutL = LED (12)
 ledOutR = LED (21)
 
 #initiate LEDs and vibration sensor (Input Device) on device with ip address '192.168.153.152'
 vibr152 = DigitalInputDevice(9, pin_factory=factory152)
-ledGruen152 = LED (17, pin_factory=factory152)
-ledRot152= LED (18, pin_factory=factory152)
-ledGelb152 = LED (19, pin_factory=factory152)
+ledGreen152 = LED (17, pin_factory=factory152)
+ledRed152= LED (18, pin_factory=factory152)
+ledYellow152 = LED (19, pin_factory=factory152)
 ledOutL152 = LED (20, pin_factory=factory152)
 ledOutR152 = LED (21, pin_factory=factory152)
 
 #initiate LEDs and vibration sensor (Input Device) on device with ip address '192.168.153.172'
 vibr172 = DigitalInputDevice(9, pin_factory=factory172)
-ledGruen172 = LED (17, pin_factory=factory172)
-ledRot172= LED (18, pin_factory=factory172)
-ledGelb172 = LED (19, pin_factory=factory172)
+ledGreen172 = LED (17, pin_factory=factory172)
+ledRed172= LED (18, pin_factory=factory172)
+ledYellow172 = LED (19, pin_factory=factory172)
 ledOutL172 = LED (20, pin_factory=factory172)
 ledOutR172 = LED (21, pin_factory=factory172)
 
-# initiate nrHits to count number of scored "goals" per round
+#initiate nrHits to count number of scored "goals" per round
 global nrHits
 nrHits =0
 
@@ -54,45 +54,45 @@ randInt = 3
 
 #define fucntions to turn on all Leds for all three devices
 def allLedOn():
-    ledGruen.on() 
-    ledRot.on()
-    ledGelb.on()
+    ledGreen.on() 
+    ledRed.on()
+    ledYellow.on()
     ledOutL.on()
     ledOutR.on()
     
 def allLedOn152():
-    ledGruen152.on()
-    ledRot152.on()
-    ledGelb152.on()
+    ledGreen152.on()
+    ledRed152.on()
+    ledYellow152.on()
     ledOutL152.on()
     ledOutR152.on()
     
 def allLedOn172():
-    ledGruen172.on()
-    ledRot172.on()
-    ledGelb172.on()
+    ledGreen172.on()
+    ledRed172.on()
+    ledYellow172.on()
     ledOutL172.on()
     ledOutR172.on()
 
 #define fucntions to turn off all Leds for all three devices
 def allLedOff():
-    ledGruen.off()
-    ledRot.off()
-    ledGelb.off()
+    ledGreen.off()
+    ledRed.off()
+    ledYellow.off()
     ledOutL.off()
     ledOutR.off()
     
 def allLedOff152():
-    ledGruen152.off()
-    ledRot152.off()
-    ledGelb152.off()
+    ledGreen152.off()
+    ledRed152.off()
+    ledYellow152.off()
     ledOutL152.off()
     ledOutR152.off()
     
 def allLedOff172():
-    ledGruen172.off()
-    ledRot172.off()
-    ledGelb172.off()
+    ledGreen172.off()
+    ledRed172.off()
+    ledYellow172.off()
     ledOutL172.off()
     ledOutR172.off()
 
@@ -133,15 +133,15 @@ def startingProcedure():
     allLedOff172()
     time.sleep(0.8)
     bz.on()
-    ledGruen.on()
-    ledRot.on()
-    ledGelb.on()
-    ledGruen152.on()
-    ledRot152.on()
-    ledGelb152.on()
-    ledGruen172.on()
-    ledRot172.on()
-    ledGelb172.on()
+    ledGreen.on()
+    ledRed.on()
+    ledYellow.on()
+    ledGreen152.on()
+    ledRed152.on()
+    ledYellow152.on()
+    ledGreen172.on()
+    ledRed172.on()
+    ledYellow172.on()
     time.sleep(0.3)
     bz.off()
     allLedOff()
@@ -155,35 +155,35 @@ def startingProcedure():
 #set up to communicate with the AWS cloud
 connflag = False
 
- # function for connection
+#function for connection
 def on_connect(client, userdata, flags, rc):              
     global connflag
     print ("Connected to AWS")
     connflag = True
     print("Connection returned result: " + str(rc) )
 
-# function for Sending a message
+#function for Sending a message
 def on_message(client, userdata, msg):                
     print(msg.topic+" "+str(msg.payload))
  
-mqttc = paho.Client()                                       # mqttc object
-mqttc.on_connect = on_connect                               # assign on_connect func
-mqttc.on_message = on_message                               # assign on_message func
+mqttc = paho.Client()                                       #mqttc object
+mqttc.on_connect = on_connect                               #assign on_connect func
+mqttc.on_message = on_message                               #assign on_message func
 
 #aws specific parameters 
-awshost = "a2pwwwetod6x1q-ats.iot.eu-central-1.amazonaws.com"    # Endpoint
-awsport = 8883                                                   # Port no.   
-clientId = "PiJulian_client"                                     # Thing_Name
-thingName = "PiJulian_client"                                    # Thing_Name
-caPath = "/home/pi/Downloads/AmazonRootCA1.pem"                                    # Root_CA_Certificate_Name
-certPath = "/home/pi/Downloads/a86aad4404-certificate.pem.crt"                     # <Thing_Name>.cert.pem
-keyPath = "/home/pi/Downloads/a86aad4404-private.pem.key"                          # <Thing_Name>.private.key
+awshost = "a2pwwwetod6x1q-ats.iot.eu-central-1.amazonaws.com"    #endpoint
+awsport = 8883                                                   #port no.   
+clientId = "PiJulian_client"                                     #Thing_Name
+thingName = "PiJulian_client"                                    #Thing_Name
+caPath = "/home/pi/Downloads/AmazonRootCA1.pem"                                    #Root_CA_Certificate_Name
+certPath = "/home/pi/Downloads/a86aad4404-certificate.pem.crt"                     #<Thing_Name>.cert.pem
+keyPath = "/home/pi/Downloads/a86aad4404-private.pem.key"                          #<Thing_Name>.private.key
  
-mqttc.tls_set(caPath, certfile=certPath, keyfile=keyPath, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)  # pass parameters
+mqttc.tls_set(caPath, certfile=certPath, keyfile=keyPath, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)  #pass parameters
  
-mqttc.connect(awshost, awsport, keepalive=60)               # connect to aws server
+mqttc.connect(awshost, awsport, keepalive=60)               #connect to aws server
  
-mqttc.loop_start()                                          # Start the loop
+mqttc.loop_start()                                          #start the loop
  
 
 while True:
@@ -204,7 +204,7 @@ while True:
             triggerThis()
         else:
             trigger172()
-        # when vibration module on the triggered device was hit, add on to nrHits and restart the loop  
+        #when vibration module on the triggered device was hit, add on to nrHits and restart the loop  
         nrHits = nrHits +1
     t1 = time.time()
     #calculate needed time to score ten goals
@@ -216,7 +216,7 @@ while True:
     print(total)
     #reset nrHits
     nrHits=0
-    #sending a json message to AWS cloud with user ("Anton") and the time of this trial
+    #sending a json message to AWS cloud with user ("Jonas") and the time of this trial
     if connflag == True:
         random_string= "Jonas"
         paylodmsg0="{"
